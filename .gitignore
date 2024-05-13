@@ -1,0 +1,6 @@
+./models
+./links.csv
+./ratings.csv
+./tags.csv
+./movies.csv
+./movies_one_hot.csv
