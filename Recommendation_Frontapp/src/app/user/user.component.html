@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="row ">
+        <div class="col-md-4 mt-5">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Choose a User Id
+                </button>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item" *ngFor="let number of numbers" (click)="selectNumber(number)">
+                        {{ number }}
+                    </li>
+                </ul>
+            </div>
+            <h3 *ngIf="selectes_user"> you Choosed User Id : {{selectes_user}}</h3>
+        </div>
+
+    </div>
+</div>
+
+<section class="vh-50 d-flex align-items-center" *ngIf="loading">
+    <div class="container py-5">
+        <h3 class="mb-5">Previously Viewed</h3>
+        <owl-carousel-o [options]="customOptions">
+            <ng-container *ngFor="let movie of movies_details">
+                <ng-template carouselSlide [id]="movie.movie_id">
+                        <img [src]="imgpre+movie.poster_path" alt="" class='w-100 mb-2'>
+                        <h5 class="text-center">{{ movie.title }}</h5>
+                   
+                </ng-template>
+            </ng-container>
+
+        </owl-carousel-o>
+
+    </div>
+</section>
+
+<section class="vh-50 d-flex align-items-center" *ngIf="loading">
+    <div class="container py-5">
+        <h3 class="mb-5">Recommended Movies</h3>
+        <owl-carousel-o [options]="customOptions">
+            <ng-container *ngFor="let movie of high_movie_rec_details">
+                <ng-template carouselSlide [id]="movie.movie_id">
+                        <img [src]="imgpre+movie.poster_path" alt="" class='w-100 mb-2'>
+                        <h5 class="text-center">{{ movie.title }}</h5>
+                   
+                </ng-template>
+            </ng-container>
+
+        </owl-carousel-o>
+
+    </div>
+</section>
+
+<section class="vh-50 d-flex align-items-center" *ngIf="loading">
+    <div class="container py-5">
+        <h3 class="mb-5">Not Recommended Movies</h3>
+        <owl-carousel-o [options]="customOptions">
+            <ng-container *ngFor="let movie of low_movie_rec_details">
+                <ng-template carouselSlide [id]="movie.movie_id">
+                        <img [src]="imgpre+movie.poster_path" alt="" class='w-100 mb-2'>
+                        <h5 class="text-center">{{ movie.title }}</h5>
+                   
+                </ng-template>
+            </ng-container>
+
+        </owl-carousel-o>
+
+    </div>
+</section>

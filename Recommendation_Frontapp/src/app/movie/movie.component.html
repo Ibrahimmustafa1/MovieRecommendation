@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 mt-5 ">
+            <div class="dropdown ">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Choose a Movie
+                </button>
+                <div class="dropdown-menu w-100">
+                    <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="searchText">
+                    <div class="dropdown-divider"></div>
+                    <button class="dropdown-item" *ngFor="let movie of filteredTitles" (click)="selectTitle(movie)">
+                        {{ movie['title'] }}
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mt-5">
+            <img class="w-75 img" [src]="slected_movie_img" alt="">
+            <h3>{{ selected_movie_title }}</h3>
+        </div>
+    </div>
+</div>
+
+
+<section class="vh-50 d-flex align-items-center" *ngIf="similar_movie_details.length > 0">
+    <div class="container py-5">
+        <h3 class="mb-5">Similar Movies</h3>
+        <owl-carousel-o [options]="customOptions">
+            <ng-container *ngFor="let movie of similar_movie_details">
+                <ng-template carouselSlide [id]="movie.movie_id">
+                        <img [src]="imgpre+movie.poster_path" alt="" class='w-100 mb-2'>
+                        <h5 class="text-center">{{ movie.title }}</h5>
+                   
+                </ng-template>
+            </ng-container>
+
+        </owl-carousel-o>
+
+    </div>
+</section>

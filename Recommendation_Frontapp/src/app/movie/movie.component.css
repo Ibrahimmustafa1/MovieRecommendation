@@ -1,0 +1,9 @@
+.similar-movie-img {
+    max-height: 200px; /* Adjust this value as needed */
+    object-fit: cover;
+}
+.dropdown-menu {
+    overflow: scroll;
+    height: 300px !important;
+
+}

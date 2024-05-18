@@ -1,0 +1,63 @@
+/* Variables */
+:root {
+    --bgcolor: #131722;
+    --lightbgcolor: #24baef;
+    --bgtrans: rgba(36, 186, 239, 0.6);
+    --fontcolor: #fff;
+    --bordercolor: #a8a8a83d;
+    --borderheight: 1px;
+    --secondcolor: #949cb0;
+  }
+  
+  /* Imports */
+  /* Import ngx-owl-carousel-o styles */
+  
+  /* Body */
+  body {
+    background-image: url("../src/assets/thumb-1920-591596.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--fontcolor);
+  }
+  
+  /* Layer */
+  .layer {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(1, 5, 6, 0.6);
+    z-index: -1;
+  }
+  
+  /* Navbar Toggler Icon */
+  .navbar-toggler-icon {
+    padding-left: 50px !important;
+    background-color: #373f57 !important;
+  }
+  
+  /* Links and Icons */
+  a, i {
+    color: var(--fontcolor) !important;
+    font-size: 18px;
+    text-decoration: none;
+  }
+  
+  a:hover, i:hover {
+    color: var(--fontcolor);
+    font-size: 18px;
+    text-decoration: none;
+  }
+  
+  /* Media Query */
+  @media only screen and (max-width: 1000px) {
+    body {
+      background-image: none;
+      background-color: #131722 !important;
+    }
+  }
+  
